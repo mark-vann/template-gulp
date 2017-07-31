@@ -1,0 +1,25 @@
+# Mac
+.DS_Store
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Others
+dist
+node_modules
+settings.json
+.sass-cache
+*.settings
+*.zip
+*.rar
+*.psd
+*.doc
+*.docx
+*.ppt
+*.pptx
+*.xls
+*.xlsx
+*.cfg
+*.log
