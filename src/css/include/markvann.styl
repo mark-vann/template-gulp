@@ -1,0 +1,44 @@
+
+rwdS = 480
+rwdM = 640
+rwdL = 960
+rwdX = 1280
+
+fontNoto = "Noto Sans", "Noto Sans CJK TC"
+fontHei = Helvetica, Verdana, Arial, "微軟正黑體", "Microsoft JhengHei", "儷黑 Pro", "LiHei Pro", sans-serif
+fontMing = "Times New Roman", "新細明體", "PMingLiU", serif
+fontMono = "Monaco", "Courier New", monospace
+
+easeInBack = cubic-bezier(0.600, -0.280, 0.735, 0.045)
+easeOutBack = cubic-bezier(0.175, 0.885, 0.32, 1.275)
+easeInOutBack = cubic-bezier(0.680, -0.550, 0.265, 1.550)
+easeInCubic = cubic-bezier(0.550, 0.055, 0.675, 0.190)
+easeOutCubic = cubic-bezier(0.215, 0.610, 0.355, 1.000)
+easeInOutCubic = cubic-bezier(0.645, 0.045, 0.355, 1.000)
+
+vw(value)
+  round($value * 40000 / 640) * 0.0025vw
+
+bg(file, repeat = no-repeat, pos = center top)
+  background: url('../img/' + file) repeat pos
+
+bgColor(color, file, repeat = no-repeat, pos = center top)
+  background: color url('../img/' + file) repeat pos
+
+bgSize(file, repeat = no-repeat, pos = center top, size = cover)
+  bg(file, repeat, pos)
+  background-size: size
+
+bgColorSize(color, file, repeat = no-repeat, pos = center top, size = cover)
+  bgColor(color, file, repeat, pos)
+  background-size: size
+
+lessThan(value = 640)
+  value = unit(value, px)
+  @media only screen and (max-width: value)
+    {block}
+
+moreThan(value = 640)
+  value = unit(value + 1, px)
+  @media only screen and (min-width: value)
+    {block}
